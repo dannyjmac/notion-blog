@@ -7,7 +7,6 @@ import styles from "./index.module.css";
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
-  console.log({ posts });
   return (
     <div>
       <Head>

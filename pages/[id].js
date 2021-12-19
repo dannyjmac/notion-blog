@@ -6,7 +6,6 @@ import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 
 export const Text = ({ text }) => {
-  console.log({ text });
   if (!text) {
     return null;
   }
@@ -33,7 +32,6 @@ export const Text = ({ text }) => {
 };
 
 const renderBlock = (block) => {
-  console.log({ block });
   const { type, id } = block;
   const value = block[type];
 
