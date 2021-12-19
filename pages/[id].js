@@ -6,6 +6,7 @@ import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 
 export const Text = ({ text }) => {
+  console.log({ text });
   if (!text) {
     return null;
   }
@@ -32,6 +33,7 @@ export const Text = ({ text }) => {
 };
 
 const renderBlock = (block) => {
+  console.log({ block });
   const { type, id } = block;
   const value = block[type];
 
@@ -92,10 +94,14 @@ const renderBlock = (block) => {
     case "image":
       const src =
         value.type === "external" ? value.external.url : value.file.url;
-      const caption = value.caption ? value.caption[0].plain_text : "";
+      const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
-        <figure>
-          <img src={src} alt={caption} />
+        <figure style={{ display: "flex", alignItems: "center" }}>
+          <img
+            style={{ maxWidth: 400, margin: "0 auto" }}
+            src={src}
+            alt={"test"}
+          />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
