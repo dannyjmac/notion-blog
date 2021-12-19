@@ -17,10 +17,11 @@ export default function Home({ posts }) {
       <main className={styles.container}>
         <header className={styles.header}>
           <div className={styles.logos}></div>
-          <h1>Daniel R McGrane</h1>
+          <h1>Daniel Ramesh ⚡️</h1>
+          <span>Bitcoin, Lightning and Decentralisation.</span>
         </header>
 
-        <h2 className={styles.heading}>All Posts</h2>
+        <h2 className={styles.heading}>Posts</h2>
         <ol className={styles.posts}>
           {posts.map((post) => {
             const date = new Date(post.last_edited_time).toLocaleString(
