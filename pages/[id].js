@@ -38,7 +38,7 @@ const renderBlock = (block) => {
   switch (type) {
     case "paragraph":
       return (
-        <p>
+        <p style={{ marginBottom: 30 }}>
           <Text text={value.text} />
         </p>
       );
@@ -63,7 +63,7 @@ const renderBlock = (block) => {
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li>
+        <li style={{ marginLeft: 20, listStyle: "none" }}>
           <Text text={value.text} />
         </li>
       );
@@ -94,9 +94,11 @@ const renderBlock = (block) => {
         value.type === "external" ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
-        <figure style={{ display: "flex", alignItems: "center" }}>
+        <figure
+          style={{ display: "flex", alignItems: "center", margin: "40px 0" }}
+        >
           <img
-            style={{ maxWidth: 400, margin: "0 auto" }}
+            style={{ maxWidth: 500, margin: "0 auto" }}
             src={src}
             alt={"test"}
           />
@@ -119,9 +121,11 @@ export default function Post({ page, blocks }) {
     return <div />;
   }
   return (
-    <div>
+    <div style={{ paddingTop: 50 }}>
       <Head>
-        <title>{page.properties.Name.title[0].plain_text}</title>
+        <title style={{ marginBottom: 30 }}>
+          {page.properties.Name.title[0].plain_text}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
