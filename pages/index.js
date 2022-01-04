@@ -17,7 +17,7 @@ export default function Home({ posts }) {
       <main className={styles.container}>
         <header className={styles.header}>
           <div className={styles.logos}></div>
-          <h1>Daniel Ramesh ⚡️</h1>
+          <h1>danramac</h1>
           <span>Bitcoin, Lightning and Decentralisation.</span>
         </header>
 
