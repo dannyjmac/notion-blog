@@ -93,7 +93,7 @@ const renderBlock = (block) => {
       const src =
         value.type === "external" ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : "";
-      console.log({ src });
+      console.log({ src: src });
       return (
         <figure
           style={{ display: "flex", alignItems: "center", margin: "40px 0" }}
